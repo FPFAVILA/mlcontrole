@@ -1,0 +1,3 @@
+- [x] Criar a pressell na entrada com imagem, título, preço e botão Continuar.
+- [x] Mostrar carregamento breve com bolinha azul e abrir a página atual do produto.
+- [x] Conferir visual e navegação no navegador.
