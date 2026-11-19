@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { createFileRoute } from "@tanstack/react-router"
 import { Button } from "@/components/ui/button"
-import productPhoto from "@/assets/gallery/p8.webp.asset.json"
+import { PRODUCT_IMAGE, PRODUCT_NAME } from "@/lib/product-catalog"
 
 const PRESELL_SEEN_KEY = "presell_seen"
 
@@ -33,8 +33,8 @@ function PresellPage() {
       <article className="mx-auto w-full max-w-[320px] overflow-hidden rounded-[8px] bg-card shadow-[var(--shadow-presell)] sm:max-w-[584px]">
         <div className="flex aspect-[8/7] w-full items-center justify-center bg-card">
           <img
-            src={productPhoto.url}
-            alt="Controle Sony DualSense Edge PS5 branco visto de frente"
+            src={PRODUCT_IMAGE}
+            alt="Kit Película Traseira iPhone XR Estilo 13 Pro Max"
             className="h-full w-full object-contain"
             width={1024}
             height={1024}
@@ -43,9 +43,9 @@ function PresellPage() {
         </div>
         <div className="border-t border-border px-4 pb-4 pt-4 sm:px-6 sm:pb-6 sm:pt-6">
           <h1 className="text-[16px] font-semibold leading-[1.2] text-ml-gray-700 sm:text-[23px]">
-            Controle Sony DualSense Edge PS5 Branco
+            {PRODUCT_NAME}
           </h1>
-          <p className="mt-3 text-[28px] leading-none text-ml-gray-800 sm:mt-5 sm:text-[38px]">R$ 179,90</p>
+          <p className="mt-3 text-[28px] leading-none text-ml-gray-800 sm:mt-5 sm:text-[38px]">R$ 29,90</p>
           <Button
             type="button"
             onClick={continueToProduct}
@@ -69,10 +69,10 @@ function PresellPage() {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Controle Sony DualSense Edge PS5 Branco | Oferta" },
-      { name: "description", content: "Controle Sony DualSense Edge PS5 Branco por R$ 179,90. Continue para conhecer o produto." },
-      { property: "og:title", content: "Controle Sony DualSense Edge PS5 Branco | Oferta" },
-      { property: "og:description", content: "Controle Sony DualSense Edge PS5 Branco por R$ 179,90. Continue para conhecer o produto." },
+      { title: "Kit Película Traseira iPhone XR Estilo 13 Pro Max | Oferta" },
+      { name: "description", content: "Kit Película Traseira iPhone XR Estilo 13 Pro Max por R$ 29,90. Transforme o visual do seu iPhone XR." },
+      { property: "og:title", content: "Kit Película Traseira iPhone XR Estilo 13 Pro Max | Oferta" },
+      { property: "og:description", content: "Kit Película Traseira iPhone XR Estilo 13 Pro Max por R$ 29,90. Transforme o visual do seu iPhone XR." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

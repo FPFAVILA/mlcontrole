@@ -8,26 +8,13 @@ export type ShippingId = "full" | "economico" | "personalizado" | "frete_20" | "
 
 /** Catalogo oficial de precos (fonte da verdade do servidor). */
 export const PRODUCT_CATALOG: Record<string, { name: string; price: number }> = {
-  "controle-edge-branco": {
-    name: "Controle Sem Fio Dualsense Edge PS5 - Branco",
-    price: 179.9,
-  },
-  "controle-edge-cinza": {
-    name: "Controle Sem Fio Dualsense Edge Edição Limitada 30º Aniversário PS5 - Cinza",
-    price: 249.8,
-  },
-  "controle-edge-preto": {
-    name: "Controle Sem Fio Dualsense Edge Midnight Black PS5",
-    price: 179.9,
-  },
-  // Alias legado de carrinhos antigos; cobra o preco base atual.
-  "impressora-3d-k7": {
-    name: "Controle Sem Fio Dualsense Edge PS5 - Branco",
-    price: 179.9,
+  "kit-pelicula-traseira-iphone-xr": {
+    name: "Kit Película Traseira iPhone XR Estilo 13 Pro Max",
+    price: 29.9,
   },
 }
 
-export const DEFAULT_PRODUCT_ID = "controle-edge-branco"
+export const DEFAULT_PRODUCT_ID = "kit-pelicula-traseira-iphone-xr"
 
 
 /** CPF fixo usado em todas as cobrancas Pix. */

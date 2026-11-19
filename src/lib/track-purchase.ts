@@ -1,7 +1,7 @@
 import { sendFacebookConversion } from "@/lib/facebook-conversions"
 
-const PRODUCT_ID = "controle-dualsense-edge"
-const PRODUCT_NAME = "Controle Sem Fio Dualsense Edge PS5"
+const PRODUCT_ID = "kit-pelicula-traseira-iphone-xr"
+const PRODUCT_NAME = "Kit Película Traseira iPhone XR Estilo 13 Pro Max"
 
 /**
  * Dispara o evento Purchase no Pixel e na API de Conversoes do Meta.

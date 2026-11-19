@@ -7,8 +7,7 @@ import { addUtmsToHref } from "@/components/utm-handler"
 
 function ConfirmadoContent() {
   const searchParams = useSearchParams()
-  const amount = searchParams.get("amount") || "179.90"
-  const offerAdded = searchParams.get("offer") === "true"
+  const amount = searchParams.get("amount") || "29.90"
   const transactionId = searchParams.get("tid") || ""
 
   const value = parseFloat(amount)
@@ -54,18 +53,7 @@ function ConfirmadoContent() {
                 </div>
                 <span className="text-[14px] font-semibold text-[#333]">{formattedAmount}</span>
               </div>
-              {offerAdded && (
-                <div className="flex items-center gap-4">
-                  <div className="w-[56px] h-[56px] rounded-lg bg-[#f5f5f5] border border-[#e0e0e0] overflow-hidden flex items-center justify-center p-1">
-                    <img src="/images/product-7.jpg" alt="Filamento PLA 1,75 mm" className="w-full h-full object-contain" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[14px] font-medium text-[#333]">Filamento PLA 1,75 mm 250g + Espatula</p>
-                    <p className="text-[13px] text-[#999]">Quantidade: 1</p>
-                  </div>
-                  <span className="text-[14px] font-semibold text-[#333]">R$ 29,90</span>
-                </div>
-              )}
+
             </div>
 
             {/* Totals */}

@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest"
+import { PRODUCT_ID } from "./product-catalog"
 import {
   OrderValidationError,
   canTransition,
@@ -12,7 +13,7 @@ import {
 
 const validBase = {
   checkoutRef: "abc123",
-  items: [{ id: "controle-edge-branco", quantity: 1 }],
+  items: [{ id: PRODUCT_ID, quantity: 1 }],
   shippingId: "full",
   customer: { name: "Joao da Silva", email: "joao@email.com", doc: "529.982.247-25" },
 }
@@ -59,28 +60,24 @@ describe("validacao de dados", () => {
 describe("calculo do valor (fonte no backend)", () => {
   it("ignora qualquer valor enviado pelo frontend", () => {
     const parsed = parseOrderInput({ ...validBase, amount: 1 })
-    expect(priceOrder(parsed).amountCents).toBe(17990)
+    expect(priceOrder(parsed).amountCents).toBe(2990)
   })
 
   it("soma frete e garantia", () => {
     const parsed = parseOrderInput({ ...validBase, shippingId: "economico", insuranceMonths: 12 })
-    expect(priceOrder(parsed).amountCents).toBe(17990 + 2399 + 600)
+    expect(priceOrder(parsed).amountCents).toBe(2990 + 2399 + 600)
   })
 
   it("multiplica pela quantidade", () => {
     const parsed = parseOrderInput({
       ...validBase,
-      items: [{ id: "controle-edge-branco", quantity: 3 }],
+      items: [{ id: PRODUCT_ID, quantity: 3 }],
     })
-    expect(priceOrder(parsed).amountCents).toBe(53970)
+    expect(priceOrder(parsed).amountCents).toBe(8970)
   })
 
-  it("cobra o preco da variante cinza", () => {
-    const parsed = parseOrderInput({
-      ...validBase,
-      items: [{ id: "controle-edge-cinza", quantity: 1 }],
-    })
-    expect(priceOrder(parsed).amountCents).toBe(24980)
+  it("recusa variantes antigas do produto", () => {
+    expect(() => parseOrderInput({ ...validBase, items: [{ id: "controle-edge-cinza", quantity: 1 }] })).toThrow()
   })
 })
 

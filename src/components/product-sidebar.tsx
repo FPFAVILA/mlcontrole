@@ -4,7 +4,7 @@ import { useRouter } from "@/lib/next-compat"
 import { useShipping } from "@/hooks/use-shipping"
 import { useCart } from "@/hooks/use-cart"
 import { getSelectedVariant } from "@/lib/product-pricing"
-import psLogo from "@/assets/playstation-logo.jpg.asset.json"
+import { PRODUCT_IMAGE, PRODUCT_NAME } from "@/lib/product-catalog"
 
 
 function QuantitySelector({ quantity, setQuantity }: { quantity: number; setQuantity: (n: number) => void }) {
@@ -105,9 +105,9 @@ export function ProductSidebar() {
   const handleAddToCart = () => {
     addItem({
       id: getSelectedVariant().id,
-      title: "Controle Sem Fio Dualsense Edge PS5",
+      title: PRODUCT_NAME,
       price: getSelectedVariant().price,
-      image: "/images/product-1.jpg",
+      image: PRODUCT_IMAGE,
     }, quantity)
 
     setAdded(true)
@@ -205,7 +205,7 @@ export function ProductSidebar() {
         <div className="flex items-center gap-2 mb-1">
           <img
             src={psLogo.url}
-            alt="Loja PlayStation"
+            alt="Loja de acessórios para celular"
             width={32}
             height={32}
             loading="lazy"
@@ -213,10 +213,10 @@ export function ProductSidebar() {
             className="w-[32px] h-[32px] object-contain"
           />
           <p className="text-[14px] text-[#333]">
-            Vendido por <span className="text-[#3483fa] font-medium">PlayStation</span>
+            Vendido por <span className="text-[#3483fa] font-medium">Cellfy</span>
           </p>
         </div>
-        <p className="text-[14px] text-[#333] mb-4">+1000 vendas</p>
+        <p className="text-[14px] text-[#333] mb-4">+2.000 vendas</p>
 
         <div className="flex items-start gap-2 mb-3">
           <RotateCcw className="w-[16px] h-[16px] text-[#999] mt-[2px] flex-shrink-0" />

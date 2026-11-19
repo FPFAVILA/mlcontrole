@@ -63,10 +63,10 @@ function ProductPage() {
 export const Route = createFileRoute("/produto")({
   head: () => ({
     meta: [
-      { title: "Controle Sony DualSense Edge PS5 | PlayStation" },
-      { name: "description", content: "Conheça o Controle Sony DualSense Edge para PS5 e escolha sua cor." },
-      { property: "og:title", content: "Controle Sony DualSense Edge PS5 | PlayStation" },
-      { property: "og:description", content: "Conheça o Controle Sony DualSense Edge para PS5 e escolha sua cor." },
+      { title: "Kit Película Traseira iPhone XR Estilo 13 Pro Max" },
+      { name: "description", content: "Kit de película traseira autoadesiva para iPhone XR, com design inspirado no iPhone 13 Pro Max e lentes decorativas." },
+      { property: "og:title", content: "Kit Película Traseira iPhone XR Estilo 13 Pro Max" },
+      { property: "og:description", content: "Transforme a traseira do seu iPhone XR com uma película autoadesiva branca e lentes decorativas." },
 
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
